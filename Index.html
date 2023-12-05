@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Login.css" />
+    <script
+      src="https://kit.fontawesome.com/97ef023887.js"
+      crossorigin="anonymous"
+    ></script>
+    <title id="title">Login-Signup</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <div class="H" id="h"><h1>SignUp</h1></div>
+
+        <form action="backend.php">
+          <div class="input-field" id="name">
+            <i class="fa-solid fa-user"></i>
+            <label for="">Name</label>
+            <input type="text" /><br /><br />
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-user"></i>
+            <label for="name">Email</label><br />
+
+            <input type="text" name="Email" id="Email" /><br /><br />
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <label for="pass">PassWord</label><br />
+            <input type="password" name="=Password" id="pass" /><br /><br />
+          </div>
+          <!-- <label for="submit">Submit</label> -->
+          <div class="but">
+            <input type="button" value="Signin" class="sibutton" id="signin" />
+            <input type="button" value="SignUp" class="subutton" id="signup" />
+          </div>
+          <p>Forget password <a href="#">Click Here</a></p>
+        </form>
+      </div>
+    </div>
+    <script>
+      let Signin = document.getElementById("signin");
+      let Signup = document.getElementById("signup");
+      let title = document.getElementById("h");
+      let name = document.getElementById("name");
+
+      Signin.onclick = () => {
+        name.style.display = "none";
+        title.innerHTML = "Sign In";
+        title.style.fontSize = "20px ";
+        Signup.classList.remove("disable");
+        Signin.classList.add("disable");
+      };
+      Signup.onclick = () => {
+        name.style.display = "block";
+        title.innerHTML = "Sign Up";
+        title.style.fontSize = "20px";
+        Signup.classList.add("disable");
+        Signin.classList.remove("disable");
+      };
+    </script>
+  </body>
+</html>
